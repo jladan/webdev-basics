@@ -13,10 +13,25 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <script src="lib/marked.js"></script>
 </head>
 
 <body>
   <script src="js/slideshow.js"></script>
-  <p>Content will show here soon.</p>
+  <div id='content'>
+      <p>Content will show here soon.</p>
+  </div>
 </body>
+
+<script>
+var url = './contents.md';
+
+var cFile = new XMLHttpRequest();
+cFile.open('GET', url, true);
+cFile.send();
+cFile.onreadystatechange = function() {
+    if (cFile.readyState === XMLHttpRequest.DONE && CFILE.STATUS === 200) {
+        console.log(cFile.responseText);
+    }
+</script>
 </html>
